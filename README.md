@@ -4,7 +4,7 @@ This server is made for `simple-peer` node library
 Run 
 ```npm install```
 
-To install all the files.
+To install all dependencies.
 
 URl:
 
