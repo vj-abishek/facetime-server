@@ -2,7 +2,7 @@ This is a server for sending and recieving your offer and answer. This is using 
 This server is made for `simple-peer` node library
 
 Run 
-```npm install```
+### `npm install`
 
 To install all dependencies.
 
