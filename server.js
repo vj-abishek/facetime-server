@@ -41,6 +41,13 @@ io.on('connection', (socket) => {
 
   //listen for events
 
+  //The other user joined the party
+  socket.on('imhere', () => {
+    let room = users.filter((id) => id.id === socket.id)
+    console.log(room[0].room)
+    socket.broadcast.to(room[0].room).emit('imhere')
+  })
+
   //set offer for airdrop
   socket.on('airdropOffer', (peer) => {
     let room = users.filter((id) => id.id === socket.id)
