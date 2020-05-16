@@ -16,7 +16,7 @@ app.use(cors())
 
 //default route
 app.get('/', (req, res) => {
-  res.json({ msg: 'This is V2 with qrcode support' })
+  res.json({ msg: 'This is V3 with qrcode support' })
 })
 
 const server = app.listen(PORT, () => {
