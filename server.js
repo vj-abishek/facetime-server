@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const socket = require('socket.io')
 const cors = require('cors')
+const Sentry = require('@sentry/node');
+
+// crash report from sentry
+Sentry.init({ dsn: 'https://19ab08dbd18f498b9fcc1731d685da6a@o400302.ingest.sentry.io/5258617' });
 
 const PORT = process.env.PORT || 3030
 
