@@ -65,6 +65,19 @@ io.on('connection', (socket) => {
     }
   })
 
+  //set answer for airdrop
+  socket.on('airdropAnswer', (peer) => {
+    let room = users.filter((id) => id.id === socket.id)
+
+    try {
+      if (room[0].room) {
+        socket.broadcast.to(room[0].room).emit('airdropBackAnswer', peer)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  })
+
   // set answer for facetime
   socket.on('answer', (answer) => {
     socket.broadcast.emit('backAnswer', answer)
