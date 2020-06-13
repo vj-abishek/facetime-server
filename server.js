@@ -4,6 +4,9 @@ const socket = require('socket.io')
 const cors = require('cors')
 const Sentry = require('@sentry/node');
 
+// //config
+// socket.set('transports', ['websocket']);
+
 // crash report from sentry
 Sentry.init({ dsn: 'https://19ab08dbd18f498b9fcc1731d685da6a@o400302.ingest.sentry.io/5258617' });
 
@@ -28,6 +31,11 @@ const server = app.listen(PORT, () => {
 })
 
 const io = socket(server)
+
+// configuration for websocket instead of polling
+io.set('transports', ['websocket']);
+
+
 
 io.on('connection', (socket) => {
   console.log('Made connection id:', socket.id)
